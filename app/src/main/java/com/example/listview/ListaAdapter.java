@@ -29,23 +29,23 @@ private LayoutInflater li;
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
 
-        View itemView = convertView;
-        if(itemView ==null){
-            itemView = li.inflate(R.layout.item,parent,false);
+        View itemViews = convertView;
+        if(itemViews ==null){
+            itemViews = li.inflate(R.layout.item,parent,false);
 
         }
         Inmueble inmueble= lista.get(position);
 
-        ImageView foto = itemView.findViewById(R.id.ivFoto);
+        ImageView foto = itemViews.findViewById(R.id.ivFoto);
         foto.setImageResource(inmueble.getFoto());
 
-        TextView direccion = itemView.findViewById(R.id.tvDireccion);
+        TextView direccion = itemViews.findViewById(R.id.tvDireccion);
         direccion.setText(inmueble.getDireccion());
 
-        TextView precio = itemView.findViewById(R.id.tvPrecio);
+        TextView precio = itemViews.findViewById(R.id.tvPrecio);
         precio.setText(inmueble.getPrecio()+"");
 
-        return itemView;
+        return itemViews;
 
     }
 }
